@@ -1,0 +1,61 @@
+.view {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  color: #333;
+  padding: 1rem 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.view__heading {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  gap: 5px;
+}
+
+.view__hours {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+@media screen and (max-width: 700px) {
+  .view__hours {
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+  }
+}
+
+.hour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.hour__number {
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: -1rem;
+}
+
+.hour__number--min {
+  font-size: smaller;
+}
+
+.hour__icon {
+  width: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hour__icon img {
+  width: 100%;
+  height: auto;
+}
+
+.hour__temp {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
