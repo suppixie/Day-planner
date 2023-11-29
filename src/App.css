@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+/* Homepage / Weather App */
+.weather__container {
+  margin: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 1.5rem;
+}
+button{
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 1100px) {
+  .weather__container {
+    grid-template-columns: 1fr;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Column 1 */
+.weather__col--1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
+}
+
+.weather__search {
+  width: 100%;
+  text-align: left;
+}
+
+p.weather__search--prompt {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Column 2 */
+
+.weather__col--2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.results__main {
+  background-color: #133667;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(45deg, #000, transparent);
+  object-fit: cover;
+}
+.weather__essentials {
+  padding: 0 0.5rem;
+}
+
+/* Column 3 */
+.weather__col--3 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.weather__cta {
+  padding: 1.8rem 1.5rem;
+  border-radius: 14px;
+  color: #fff;
+  border: 2px solid #d3d3d3;
+}
+
+.weather__cta a:link,
+.weather__cta a:visited {
+  text-decoration: none;
+}
+
+.weather__cta p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.weather__cta button {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #333;
+  border-radius: 2rem;
+}
+
+.weather__cta--day button {
+  background-color: #f6ae2d;
+}
+
+.weather__cta--trip button {
+  background-color: #8bd8f9;
+}
+
+.weather__cta--climate button {
+  background-color: #79b791;
+
+}
+
+/* Placeholders: Remove after components are added in */
+.weather__placeholder--2 {
+  height: 12rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: cornflowerblue;
+  width: 100%;
+  border-radius: 1rem;
 }
