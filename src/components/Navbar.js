@@ -36,16 +36,7 @@ function Navbar() {
               Day Planner
             </Link>
           </li>
-          <li className="nav__item">
-            <Link to="/trip-planner" onClick={toggleMenu}>
-              Trip Planner
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/climate-change" onClick={toggleMenu}>
-              Climate Change
-            </Link>
-          </li>
+         
         </ul>
       </nav>
     </div>
