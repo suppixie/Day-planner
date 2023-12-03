@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <div className={`navbar ${isOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__left">
-        <Link to="/">TravelPrep</Link>
+        <Link to="/">Day Planner</Link>
       </div>
       <button className="hamburger" onClick={toggleMenu}>
         <span className="hamburger__box">
