@@ -19,7 +19,7 @@ const Forecast = ({ city }) => {
     'https://api.openweathermap.org/data/2.5/forecast?&q=' +
     city +
     '&units=metric&appid=' +
-    process.env.REACT_APP_APIKEY;
+    process.env.WEATHER_API_KEY;
 
   const handleChangeView = (data) => {
     setForecastView(data);
