@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <div className={`navbar ${isOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__left">
-        <Link to="/">TravelPrep</Link>
+        <Link to="/">Day Planner</Link>
       </div>
       <button className="hamburger" onClick={toggleMenu}>
         <span className="hamburger__box">
@@ -36,16 +36,7 @@ function Navbar() {
               Day Planner
             </Link>
           </li>
-          <li className="nav__item">
-            <Link to="/trip-planner" onClick={toggleMenu}>
-              Trip Planner
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/climate-change" onClick={toggleMenu}>
-              Climate Change
-            </Link>
-          </li>
+         
         </ul>
       </nav>
     </div>

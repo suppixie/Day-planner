@@ -120,19 +120,14 @@ function App() {
             </Link>
           </div>
 
-          <div className="weather__cta weather__cta--trip">
+          {/* <div className="weather__cta weather__cta--trip">
             <p>Start planning your next trip with our flight finder!</p>
             <Link to="/trip-planner">
               <button>Trip Planner</button>
             </Link>
-          </div>
+          </div> */}
 
-          <div className="weather__cta weather__cta--climate">
-            <p>Learn how climate change can affect your travels.</p>
-            <Link to="/climate-change">
-              <button>Climate Change</button>
-            </Link>
-          </div>
+         
         </div>
       </div>
     );
