@@ -18,8 +18,7 @@ const Forecast = ({ city }) => {
   const uri =
     'https://api.openweathermap.org/data/2.5/forecast?&q=' +
     city +
-    '&units=metric&appid=' +
-    process.env.WEATHER_API_KEY;
+    '&units=metric&appid=98c70016d77f3c1027c5e5018e2b61de';
 
   const handleChangeView = (data) => {
     setForecastView(data);
@@ -40,12 +39,13 @@ const Forecast = ({ city }) => {
             const groupedForecast = regroupForecastResults(result.list);
             let days = groupedForecast.map((f) => makeDay(f));
             setForecastResults(days);
-            setForecastView(days[0]); // set detailed view to first available day
+            setForecastView(days[0]); 
           }
         },
         (error) => {
           setForecastLoaded(true);
           setForecastError(error);
+          console.log(forecastError)
         }
       );
   }, [city, uri]);

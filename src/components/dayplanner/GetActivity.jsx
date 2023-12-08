@@ -17,21 +17,29 @@ function GetActivity(props) {
     setLoading(true);
     try {
       const openai = new OpenAI({
-        apiKey: process.env.OPENAI_API_KEY, // Replace with your OpenAI API key
+        apiKey: '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',
+        dangerouslyAllowBrowser: true,
       });
 
       const response = await openai.completions.create({
         model: "gpt-3.5-turbo-instruct",
         prompt: prompt,
-        max_tokens: 100,
+        max_tokens: 250,
         top_p: 1,
         temperature: 0.7,
       });
 
-      const paragraph = response.data.choices[0].text;
-      let sentences = paragraph.split(/(?<![a-zA-Z\d])\d+. /);
-      sentences = sentences.filter(element => isNaN(element));
-      setResult(sentences);
+      // Check if choices exist in the response
+      console.log(response.choices[0].text);
+
+      if (response.choices && response.choices.length > 0) {
+        const paragraph = response.choices[0].text;
+        let sentences = paragraph.split(/(?<![a-zA-Z\d])\d+. /);
+        sentences = sentences.filter(element => isNaN(element));
+        setResult(sentences);
+      } else {
+        console.error('Invalid response format from OpenAI API');
+      }
     } catch (error) {
       console.error('Error:', error);
     } finally {
@@ -48,7 +56,7 @@ function GetActivity(props) {
   };
 
   const refresh = () => {
-    generateActivity(); // Call the generateActivity function to refresh
+    generateActivity();
   };
 
   return (

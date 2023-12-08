@@ -7,10 +7,11 @@ import Forecast from './components/forecast/Forecast';
 import Essentials from './components/essentials';
 import GMaps from './components/Map';
 
-function App() {
+function App(props) {
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [city, setCity] = useState('Mumbai');
+  const [city, setCity] = useState('Hyderabad');
   const [results, setResults] = useState(null);
   const [containerStyle, setContainerStyle] = useState({});
   const [cood, setCood] = useState({ lat: 19.076, lng: 72.8777 });
@@ -42,8 +43,8 @@ function App() {
         'https://api.openweathermap.org/data/2.5/weather?q=' +
           city +
           '&units=metric' +
-          '&appid=' +
-          process.env.REACT_APP_APIKEY
+          '&appid=98c70016d77f3c1027c5e5018e2b61de'
+          
       )
         .then((res) => res.json())
         .then(

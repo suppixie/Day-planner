@@ -17,7 +17,7 @@ function DayPlanner() {
   useEffect(() => {
     if (city) {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_APIKEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=98c70016d77f3c1027c5e5018e2b61de`
       )
         .then((res) => res.json())
         .then(
