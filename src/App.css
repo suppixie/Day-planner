@@ -98,11 +98,13 @@ p.weather__search--prompt {
   background-color: #79b791;
 
 }
-
+.search_city{
+  display: flex;
+}
 /* Placeholders: Remove after components are added in */
 .weather__placeholder--2 {
   height: 12rem;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   font-size: 2rem;

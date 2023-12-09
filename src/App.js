@@ -1,36 +1,27 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import AutoCity from './components/AutoCity';
 import WeatherOverlay from './components/WeatherOverlay';
 import Forecast from './components/forecast/Forecast';
 import Essentials from './components/essentials';
-import GMaps from './components/Map';
+import Journal from './components/journal';
+import MusicPlayer from './components/musicplayer';
 
-function App(props) {
+function App() {
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [city, setCity] = useState('Hyderabad');
   const [results, setResults] = useState(null);
   const [containerStyle, setContainerStyle] = useState({});
-  const [cood, setCood] = useState({ lat: 19.076, lng: 72.8777 });
+  const [inputValue, setInputValue] = useState('');
 
-  const handleSelect = (suggestion) => {
-    setCity(suggestion.name);
-    getCityLocation(suggestion.name);
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
   };
 
-  const getCityLocation = (city) => {
-    fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=${process.env.REACT_APP_GMAPS}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((jsonData) => {
-        setCood(jsonData.results[0].geometry.location);
-      });
+  const handleSearch = () => {
+    setCity(inputValue);
   };
 
   const getContainerStyle = (weather) => {
@@ -43,7 +34,8 @@ function App(props) {
         'https://api.openweathermap.org/data/2.5/weather?q=' +
           city +
           '&units=metric' +
-          '&appid=98c70016d77f3c1027c5e5018e2b61de'
+          '&appid='+
+          process.env.REACT_APP_WEATHER_KEY
           
       )
         .then((res) => res.json())
@@ -66,6 +58,7 @@ function App(props) {
     }
   }, [city]);
 
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else {
@@ -75,13 +68,19 @@ function App(props) {
         <div className="weather__col--1">
           <div className="weather__search">
             <p className="weather__search--prompt">Enter a city</p>
-            <AutoCity onSelect={handleSelect} />
-          </div>
-          <GMaps cood={cood} setCood={setCood} />
+            <div className='search_city'>
+              <input 
+                className='city_input'
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                placeholder="Enter city name"
+              />
+              <button className='city_search_button' onClick={handleSearch}>Search</button>
+            </div>          </div>
           <div className="weather__placeholder weather__placeholder--2">
-            Playlist
-            <br />
-            Coming Soon
+            <h3>Weather Playlist</h3>
+           <MusicPlayer weather={results?.weather[0].main}/>
           </div>
         </div>
 
@@ -120,13 +119,12 @@ function App(props) {
               <button>Day Planner</button>
             </Link>
           </div>
-
-          {/* <div className="weather__cta weather__cta--trip">
-            <p>Start planning your next trip with our flight finder!</p>
-            <Link to="/trip-planner">
-              <button>Trip Planner</button>
+          <div className="weather__cta weather__cta--day">
+            <p>Journal your Day</p>
+            <Link to="/Journal">
+              <button>Daily Journal</button>
             </Link>
-          </div> */}
+          </div>
 
          
         </div>

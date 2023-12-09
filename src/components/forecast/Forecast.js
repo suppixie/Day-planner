@@ -72,9 +72,7 @@ const Forecast = ({ city }) => {
   );
 };
 
-/* Take an array with the three-hourly weather forecast for five days
-   and return an array of arrays containing that same information
-   grouped by day */
+
 function regroupForecastResults(forecastResultsArr) {
   const firstDay = forecastResultsArr[0].date.getDate();
   const regroupedByDay = [];

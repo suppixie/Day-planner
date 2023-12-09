@@ -20,6 +20,9 @@ hr{
   margin-top: 1rem;
   width: 25%;
 }
+.dayplanner-weather h2{
+  text-align: left;
+}
   .dayplanner-results {
     align-items: center;
     border-radius: 10px;
@@ -36,6 +39,21 @@ input{
 .dayplanner-results h3, p{
   margin-block: 1.5vh;
 
+}
+.city_input{
+  padding: 2vh;
+  border-radius: 15px;
+  width: 80%;
+}
+.city_search_button{
+  padding: 2vh;
+  border-radius: 15px;
+  background-color: palegoldenrod;
+}
+.search_city_2{
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 hr{
     border: 1px solid rgb(24, 24, 24);

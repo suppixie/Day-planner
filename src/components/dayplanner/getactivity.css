@@ -95,6 +95,11 @@
     font-size: medium;
 
 }
+.copytoclipboardbtn{
+    padding: 2vh;
+    background-color: rgb(0, 93, 193);
+    border-radius: 15px;
+}
 @media only screen and (max-width:950px) {
 
     .activity-container {

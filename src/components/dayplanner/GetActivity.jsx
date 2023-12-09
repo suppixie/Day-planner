@@ -17,12 +17,12 @@ function GetActivity(props) {
     setLoading(true);
     try {
       const openai = new OpenAI({
-        apiKey: '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',
+        apiKey: process.env.REACT_APP_OPENAI_KEY,
         dangerouslyAllowBrowser: true,
       });
 
       const response = await openai.completions.create({
-        model: "gpt-3.5-turbo-instruct",
+        model: "text-davinci-003",
         prompt: prompt,
         max_tokens: 250,
         top_p: 1,
@@ -65,7 +65,7 @@ function GetActivity(props) {
         <div className="activity-container">
           <div className="heading">
             <h1>Activities You can do Today</h1>
-            <button className="refresh-btn" onClick={refresh}><FaRedoAlt/></button>
+            <button className="refresh-btn" onClick={refresh}>Refresh <FaRedoAlt/></button>
           </div>
           {loading ? (
             <Loading />
