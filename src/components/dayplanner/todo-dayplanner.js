@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Todolist({ todoItem, addTodos, setTodoItem }) {
-   // eslint-disable-next-line
   const handleAddTodo = () => {
     if (todoItem) {
       addTodos(todoItem);
@@ -13,7 +12,7 @@ function Todolist({ todoItem, addTodos, setTodoItem }) {
   };
 
   const handleCopyToClipboard = () => {
-    const todoListContent = todoItem.join('\n'); // Join all items in the array
+    const todoListContent = todoItem.join('\n');
 
     const textarea = document.createElement('textarea');
     textarea.value = todoListContent;

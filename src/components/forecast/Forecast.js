@@ -48,7 +48,6 @@ const Forecast = ({ city }) => {
           console.log(forecastError)
         }
       );
-       // eslint-disable-next-line
   }, [city, uri]);
 
   return (

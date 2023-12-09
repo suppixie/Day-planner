@@ -4,7 +4,6 @@ import '../../src/components/journal.css';
 
 function DailyJournal() {
   const [entry, setEntry] = useState('');
-   // eslint-disable-next-line
   const [date, setDate] = useState(new Date().toLocaleDateString());
 
   const handleSave = async () => {

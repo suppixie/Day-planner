@@ -49,7 +49,6 @@ function GetActivity(props) {
 
   useEffect(() => {
     generateActivity();
-     // eslint-disable-next-line
   }, [prompt]);
 
   const addTodos = activity => {
