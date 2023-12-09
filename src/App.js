@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import WeatherOverlay from './components/WeatherOverlay';
 import Forecast from './components/forecast/Forecast';
 import Essentials from './components/essentials';
-import Journal from './components/journal';
 import MusicPlayer from './components/musicplayer';
 
 function App() {

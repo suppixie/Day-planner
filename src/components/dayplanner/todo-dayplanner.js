@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Todolist({ todoItem, addTodos, setTodoItem }) {
+   // eslint-disable-next-line
   const handleAddTodo = () => {
     if (todoItem) {
       addTodos(todoItem);
